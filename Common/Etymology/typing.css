@@ -1,0 +1,68 @@
+body {
+	height: 100vh;
+	width: 100vw;
+	font-family: "Comic Sans MS", "Comic Sans";
+	font-size: 6em;
+	color: white;
+	background-color: black;
+	overflow: hidden;
+	user-select: none;
+}
+
+dl {
+	margin: 0 1em;
+	padding: 0;
+}
+
+dt {
+	display: inline-block;
+	font-weight: bold;
+	color: purple;
+	margin-top: 1em;
+}
+
+dd {
+	display: inline;
+	color: green;
+	word-wrap: break-word;
+}
+
+dd, dt {
+	min-height: 1em;
+}
+
+
+
+.cleared {
+	display: none
+}
+
+dd::after {
+	content: "\A";
+	white-space: pre;
+}
+
+.typing-cursor {
+	border-right: 0.1em solid white;
+}
+
+.ready-cursor {
+	animation:
+		blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+	from,
+	to {
+		border-right-color: white;
+		border-right-width: 0.1em;
+		border-right-style: solid;
+	}
+
+	50% {
+		border-right-color: transparent;
+		border-right-width: 0.1em
+		border-right-style: solid;
+	}
+}
