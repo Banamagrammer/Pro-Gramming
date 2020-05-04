@@ -10,7 +10,7 @@ body {
 }
 
 dl {
-	margin: 0 1em;
+	margin: 0 1em 1em 1em;
 	padding: 0;
 }
 
@@ -29,12 +29,6 @@ dd {
 
 dd, dt {
 	min-height: 1em;
-}
-
-
-
-.cleared {
-	display: none
 }
 
 dd::after {

@@ -25,36 +25,15 @@ const getTypedElems = () =>
 		.map(elem => Array.from(elem.querySelectorAll('dt, dd')))
 		.flat();
 
-const clearScreen = event => {
-	event.preventDefault();
-	if (isAnimationLocked) {
-		return false;
-	}
-
-	const hasContent = elem =>
-		elem.classList.contains('printed');
-
-	const clearElement = elem => {
-		elem.classList.add('cleared');
-	};
-
-	event.preventDefault();
-	getTypedElems()
-		.filter(hasContent)
-		.forEach(clearElement);
-	return false;
-};
-
 const animateElement = async elem => {
 	setCursorToTyping(elem);
 	const letters = getTypedText(elem).split('');
 
 	for (const letter of letters) {
 		elem.innerHTML += letter;
+		elem.scrollIntoView(false);
 		await timeout(typingSpeed);
 	}
-
-	elem.classList.add('printed');
 };
 
 async function typeNextElement(e) {
@@ -81,6 +60,7 @@ async function typeNextElement(e) {
 	if (anyRemainingElements) {
 		setCursorToReady(elems[elemIndex]);
 		isAnimationLocked = false;
+		elems[elemIndex].scrollIntoView(false);
 	} else {
 		setCursorToReady(elems[elemIndex - 1])
 	}
@@ -100,5 +80,4 @@ function onLoad() {
 
 	const body = document.querySelector('body');
 	body.addEventListener('click', typeNextElement);
-	body.addEventListener('contextmenu', clearScreen);
 };
