@@ -20,6 +20,7 @@ const resetScreen = () => {
 
 const run = async () => {
 	clearScreen();
+	await timeout(500);
 
 	green();
 	const title = await convertToArt('Pro Gramming', { font: 'Big Money-ne' });
@@ -40,6 +41,7 @@ const run = async () => {
 	await timeout(1000);
 	console.error('FATAL ERROR: This code is trash and I give up');
 	console.error('Process exited with error code 6B696C6C206D65');
+	await timeout(5000);
 };
 
 run();
