@@ -1,6 +1,6 @@
 import webApi from '@slack/web-api';
 
-const { WebClient } = webApi;\
+const { WebClient } = webApi;
 const userToken = process.env.SLACK_USER_TOKEN;
 const webClient = new WebClient(userToken);
 
@@ -47,7 +47,7 @@ const getChannels = async () => {
 	const { channels } = await webClient.conversations.list({
 		types: 'public_channel, private_channel, im, mpim'
 	});
-	
+
 	return channels.map(({ id }) => id);
 };
 
@@ -91,7 +91,7 @@ const respond = async ({ userId, name }, index, channels) => {
 
 	const mentionsMe = ({ text }) =>
 		text.toLowerCase().includes(name) || text.includes(getMentionFormat(userId));
-	
+
 	const isNotMe = ({ user }) => user !== userId;
 	const mentions = messages.filter(all(mentionsMe, isNotMe));
 
