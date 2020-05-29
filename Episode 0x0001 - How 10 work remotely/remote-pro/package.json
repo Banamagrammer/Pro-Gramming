@@ -1,0 +1,16 @@
+{
+	"name": "remote-pro",
+	"version": "1.0.0",
+	"description": "Slack bot for optimizing gramming efficiency",
+	"main": "app.js",
+	"type": "module",
+	"scripts": {
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "The Banamagrammer",
+	"license": "MIT",
+	"dependencies": {
+		"@slack/web-api": "^5.8.0"
+	}
+}
