@@ -1,163 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Sorting Hat - Bubble Sort</title>
 
-		<style>
-			body {
-				font-size: 40px;
-				margin: 0 3rem;
-			}
+<head>
+	<meta charset="utf-8" />
+	<title>Sorting Hat - Bubble Sort</title>
 
-			ol {
-				column-count: 3;
-			}
+	<style>
+		body {
+			font-size: 40px;
+			margin: 0 3rem;
+		}
 
-			.hidden {
-				display: none;
-			}
+		ol {
+			column-count: 3;
+		}
 
-			.big {
-				font-size: 200px;
-			}
+		.hidden {
+			display: none;
+		}
 
-			.huge {
-				font-size: 400px;
-			}
+		.big {
+			font-size: 200px;
+		}
 
-			.center {
-				text-align: center;
-			}
+		.huge {
+			font-size: 400px;
+		}
 
-			.inverse {
-				background-color: black;
-				color: white;
-			}
-		</style>
-  </head>
+		.center {
+			text-align: center;
+		}
 
-	<body>
-		<div id="not-complete">
-			<div>
-				<ol id="languages"></ol>
-			</div>
+		.inverse {
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
 
-			<div>
-				<button id="run" type="button">Run</button>
-			</div>
+<body>
+	<div id="not-complete">
+		<div>
+			<ol id="languages"></ol>
 		</div>
 
-		<div id="complete" class="hidden center">
-			<div class="big">You should use:</div>
-			<div class="huge" id="selected-language"></div>
+		<div>
+			<button id="run" type="button">Run</button>
 		</div>
+	</div>
 
-		<script type="text/javascript">
-			const delay = 0;
-			const languages = [
-				'Java',
-				'C',
-				'Python',
-				'C++',
-				'Erlang',
-				'Julia',
-				'C#',
-				'JavaScript',
-				'PHP',
-				'Swift',
-				'Ruby',
-				'Pascal',
-				'Objective-C',
-				'Assembly',
-				'Hack',
-				'Go',
-				'R',
-				'MATLAB',
-				'Haskell',
-				'Elm',
-				'Elixir',
-				'Bash',
-				'Clojure',
-				'F#',
-				'COBOL',
-				'Fortran',
-				'Ada',
-				'D',
-				'Visual Basic',
-				'Perl',
-				'SAS',
-				'Groovy',
-				'Dart',
-				'Scratch',
-				'Reason',
-				'Scala',
-				'Lisp',
-				'Kotlin',
-				'Rust',
-				'Logo',
-				'Lua',
-				'TypeScript',
-				'RPG',
-				'ML',
-				'PowerShell',
-				'LabVIEW',
-				'Scheme',
-				'OpenEdge ABL',
-				'LiveCode',
-				'Prolog'
-			];
+	<div id="complete" class="hidden center">
+		<div class="big">You should use:</div>
+		<div class="huge" id="selected-language"></div>
+	</div>
 
-			const swap = (index, elems) => {
-				const tmp = elems[index];
-				elems[index] = elems[index + 1];
-				elems[index + 1] = tmp;
-			};
+	<script type="text/javascript">
+		const delay = 10;
+		const languages = [
+			'Java',
+			'C',
+			'Python',
+			'C++',
+			'Erlang',
+			'Julia',
+			'C#',
+			'JavaScript',
+			'PHP',
+			'Swift',
+			'Ruby',
+			'Pascal',
+			'Objective-C',
+			'Assembly',
+			'Hack',
+			'Go',
+			'R',
+			'MATLAB',
+			'Haskell',
+			'Elm',
+			'Elixir',
+			'Bash',
+			'Clojure',
+			'F#',
+			'COBOL',
+			'Fortran',
+			'Ada',
+			'D',
+			'Visual Basic',
+			'Perl',
+			'SAS',
+			'Groovy',
+			'Dart',
+			'Scratch',
+			'Reason',
+			'Scala',
+			'Lisp',
+			'Kotlin',
+			'Rust',
+			'Logo',
+			'Lua',
+			'TypeScript',
+			'RPG',
+			'ML',
+			'PowerShell',
+			'LabVIEW',
+			'Scheme',
+			'OpenEdge ABL',
+			'LiveCode',
+			'Prolog'
+		];
 
-			const update = elems => {
-				const list = document.getElementById('languages');
-				list.innerHTML = elems.map(elem => `<li>${elem}</li>`).join('');
-			};
+		const swap = (index, elems) => {
+			const tmp = elems[index];
+			elems[index] = elems[index + 1];
+			elems[index + 1] = tmp;
+		};
 
-			const flash = () => {
-				document.getElementById('complete').classList.toggle('inverse');
-				setTimeout(flash, 1000);
-			};
+		const update = elems => {
+			const list = document.getElementById('languages');
+			list.innerHTML = elems.map(elem => `<li>${elem}</li>`).join('');
+		};
 
-			const finish = elems => {
-				document.getElementById('not-complete').classList.add('hidden');
-				document.getElementById('selected-language').innerHTML = elems[0];
-				document.getElementById('complete').classList.remove('hidden');
+		const flash = () => {
+			document.getElementById('complete').classList.toggle('inverse');
+			setTimeout(flash, 1000);
+		};
 
-				flash();
-				return elems;
-			};
+		const finish = elems => {
+			document.getElementById('not-complete').classList.add('hidden');
+			document.getElementById('selected-language').innerHTML = elems[0];
+			document.getElementById('complete').classList.remove('hidden');
 
-			const bubbleSort = (elems, index, needsAnotherCycle) => {
-				setTimeout(() => {
-					update(elems);
+			flash();
+			return elems;
+		};
 
-					index = index || 0;
-					needsAnotherCycle = !!needsAnotherCycle;
+		const bubbleSort = (elems, index, needsAnotherCycle) => {
+			setTimeout(() => {
+				update(elems);
 
-					if (index === elems.length - 1) {
-						return needsAnotherCycle
-							? bubbleSort(elems, 0, false)
-							: finish(elems);
-					}
+				index = index || 0;
+				needsAnotherCycle = !!needsAnotherCycle;
 
-					if (elems[index] > elems[index + 1]) {
-						swap(index, elems);
-						return bubbleSort(elems, index + 1, true);
-					}
+				if (index === elems.length - 1) {
+					return needsAnotherCycle
+						? bubbleSort(elems, 0, false)
+						: finish(elems);
+				}
 
-					return bubbleSort(elems, index + 1, needsAnotherCycle);
-				}, delay);
-			};
+				if (elems[index] > elems[index + 1]) {
+					swap(index, elems);
+					return bubbleSort(elems, index + 1, true);
+				}
 
-			const run = () => bubbleSort(languages.slice(0));
+				return bubbleSort(elems, index + 1, needsAnotherCycle);
+			}, delay);
+		};
 
-			document.getElementById('run').onclick = run;
-		</script>
-  </body>
+		const run = () => bubbleSort(languages.slice(0));
+
+		document.getElementById('run').onclick = run;
+	</script>
+</body>
+
 </html>
