@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Résumé - The Banamagrammer</title>
+
+	<style>
+		body {
+			background-color: #161616;
+			color: white;
+			font-family: monospace;
+			font-size: 16px;
+			display: grid;
+			grid-template-columns: 70% auto;
+			grid-template-rows: auto;
+			grid-template-areas:
+				"name contact"
+				"main main"
+		}
+
+		dt {
+			font-weight: bold;
+			display: inline-block;
+			width: 10rem;
+		}
+
+		dd {
+			display: inline;
+		}
+
+		dd::after {
+			content: "\A";
+			white-space: pre;
+		}
+
+		ul {
+			padding-left: 4ch;
+		}
+
+		div.name {
+			grid-area: name;
+		}
+
+		div.contact {
+			grid-area: contact;
+			margin-top: 2rem;
+		}
+
+		main {
+			grid-area: main;
+			padding-top: 3rem;
+			border-top: 1px solid white;
+		}
+
+		.email {
+			font-weight: bold;
+		}
+
+		section {
+			margin-bottom: 3rem;
+		}
+
+		ul.horizontal > li {
+			display: inline-block;
+		}
+
+		ul.horizontal > li:not(:last-child)::after {
+			content: " && ";
+			color: orange;
+			font-weight: bold;
+		}
+
+		.job {
+			margin-bottom: 3rem;
+		}
+
+		.company,
+		.school {
+			font-weight: bold;
+			display: inline;
+			color: royalblue;
+		}
+
+		.company::before {
+			content: "public void ";
+			color: violet;
+		}
+
+		.school::before {
+			content: "protected static void ";
+			color: violet;
+		}
+
+		.start,
+		.end {
+			display: inline;
+			color: lightslategray;
+		}
+
+		.start::before {
+			content: "(";
+			color: white;
+		}
+
+		.start::after {
+			content: ", ";
+			color: white;
+		}
+
+		.end::after {
+			content: ") {\A";
+			white-space: pre;
+			color: white;
+		}
+
+		.location::before {
+			content: "string location = \"";
+			color: white;
+		}
+
+		.title::before {
+			content: "string title = \"";
+			color: white;
+		}
+
+		.degree::before {
+			content: "string degree = \"";
+			color: white;
+		}
+
+		.location::after,
+		.title::after,
+		.degree::after {
+			content: "\";";
+			color: white;
+		}
+
+		.experience {
+			color: green;
+			white-space: nowrap;
+		}
+
+		.experience::before {
+			content: "/**\A";
+			white-space: pre;
+		}
+
+		.experience::after {
+			content: " */";
+			white-space: pre;
+		}
+
+		ul.experience > li {
+			list-style-type: none;
+		}
+
+		ul.experience > li::before {
+			padding-left: 1ch;
+			content: "* "
+		}
+
+		.job::after {
+			content: "}";
+		}
+
+		.location,
+		.title,
+		.degree {
+			margin-left: 4ch;
+			color: red;
+		}
+
+		.keywords {
+			font-size: 8px;
+			color: #161516;
+			width: 70%;
+		}
+		
+		.keywords li {
+			display: inline-block;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="name">
+		<h1>The Banamagrammer</h1>
+		<h3>Pro grammer on a mission to eradicate amagramming from the Earth</h3>
+	</div>
+	<div class="contact">
+		<div <div class="address">127.0.0.1 Information Hwy</div>
+		<div class="address">Stateless, NA</div>
+		<div class="address">(101) 101-0101</div>
+		<div class="email">banamagrammer@gmail.com</div>
+	</div>
+	<main>
+		<section>
+			<dl>
+				<dt>YouTube</dt>
+				<dd><a href="https://www.youtube.com/user/banamagrammer">https://www.youtube.com/user/banamagrammer</a></dd>
+				<dt>Github</dt>
+				<dd><a href="https://www.github.com/banamagrammer">https://www.github.com/banamagrammer</a></dd>
+				<dt>Stack Overflow</dt>
+				<dd><a href="https://stackoverflow.com/users/12580542/banamagrammer">https://stackoverflow.com/users/12580542/banamagrammer</a></dd>
+				<dt>LinkedIn</dt>
+				<dd><a href="https://www.linkedin.com/in/thisisnotarealprofilethankyou/">https://www.linkedin.com/in/thisisnotarealprofilethankyou/</a></dd>
+				<dt>Medium</dt>
+				<dd><a href="https://medium.com/@banamagrammer">https://medium.com/@banamagrammer</a></dd>
+			</dl>
+		</section>
+		<section>
+			<h2>Languages</h2>
+			<ul class="horizontal">
+				<li>All of them</li>
+				<li>Python also, if that counts</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Skills</h2>
+			<ul class="horizontal">
+				<li>Vim</li>
+				<li>Automation</li>
+				<li>CI/CD</li>
+				<li>WFH</li>
+				<li>Constructive criticism</li>
+				<li>Leadership</li>
+				<li>Uptime</li></li>
+				<li>false (haha j/k)</li>
+			</ul>
+		</section>
+		<section>
+				<h2>Hobbies</h2>
+				<ul class="horizontal">
+					<li>Fostering orphans XOR puppies</li>
+					<li>Feeding homeless disabled veterans</li>
+					<li>Binge drinking (energy drinks amiright)</li>
+					<li>Rescuing and training competitive roosters</li>
+					<li>Reintegrating battered women into the dating pool</li>
+					<li>Calvinball</li>
+					<li>Magnets</li>
+					<li>Creating JavaScript frameworks</li>
+				</ul>
+			</section>
+		<section>
+			<h2>Experience</h2>
+			<div class="job">
+				<div class="company">YouTubeDotCom</div>
+				<div class="start">1577253600</div>
+				<div class="end">CURRENT_DATE</div>
+				<div class="location">172.217.12.78</div>
+				<div class="title">Senior Educator</div>
+				<ul class="experience">
+					<li>Created the Pro Gramming channel and grew it to X subscribers</li>
+					<li>Wrote, produced, filmed, edited, and marketed all channel content</li>
+					<li>Mastered video editing in less than one week's time</li>
+					<li>Appeared on prestigous industry sites such as /r/ProgrammerHumor and Hacker News</li>
+				</ul>
+			</div>
+			</div>
+			<div class="job">
+				<div class="company">Banamagrammer_Consulting_LLC</div>
+				<div class="start">946684800</div>
+				<div class="end">DateTime.MAX_VALUE</div>
+				<div class="location">192.168.0.1</div>
+				<div class="title">Senior Owner and Proprietor</div>
+				<ul class="experience">
+					<li>Completed hundreds of projects with all breach of contracts reaching settlement</li>
+					<li>Clientele range from Fortune 100 former employees to unincorporated Dark Web entities</li>
+					<li>Net detractor score of 85</li>
+				</ul>
+			</div>
+			<div class="job">
+				<div class="company">Cambridge_Analytica</div>
+				<div class="start">1485936000</div>
+				<div class="end">1525194000</div>
+				<div class="location">104.20.69.190</div>
+				<div class="title">Senior Data Larcenist</div>
+				<ul class="experience">
+					<li>Pilfered petabytes of private user data</li>
+					<li>Affected the outcome of hundreds of elections in dozens of countries</li>
+					<li>Co-developed methods for capturing personal information from millions of users along with Facebook</li>
+				</ul>
+			</div>
+			<div class="job">
+				<div class="company">Theranos</div>
+				<div class="start">1329238800</div>
+				<div class="end">1483318800</div>
+				<div class="location">4.16.206.250</div>
+				<div class="title">Senior Lead Software Developer</div>
+				<ul class="experience">
+					<li>Led the Redirect and Deception (R&D) team</li>
+					<li>Developed machine learning algorithms that created over 10 TB of realistic looking data</li>
+					<li>Built a real-time 3D visualization tool of what consumers thought a real diagnostic tool might look like</li>
+				</ul>
+			</div>
+			<div class="job">
+				<div class="company">Bernard_L_Madoff_Investment_Securities</div>
+				<div class="start">1016200800</div>
+				<div class="end">1229011200</div>
+				<div class="location">207.58.180.20</div>
+				<div class="title">Senior Chief Technical Officer</div>
+				<ul class="experience">
+					<li>Automated recruitment of investors to fuel the fund</li>
+					<li>Generated artificial financial transactions and transmitted them over the wire in double digit milliseconds</li>
+					<li>Scripted an irreversable, fail-safe escape plan to erase any evidence of personal wrongdoing</li>
+				</ul>
+			</div>
+			<div class="job">
+				<div class="company">Enron</div>
+				<div class="start">936889200</div>
+				<div class="end">1000249200</div>
+				<div class="location">204.235.235.39</div>
+				<div class="title">The Smartest Engineer in the Room</div>
+				<ul class="experience">
+					<li>Simulated accounting ledgers at O(n^3) space complexity</li>
+					<li>Architected internal tools for templating and emailing press releases to media publications</li>
+					<li>Wrote predictive software for identifying likely brownout areas and preemptively assigning blame to local governments</li>
+				</ul>
+			</div>
+			<div class="job">
+				<div class="company">Pets_Dot_Com</div>
+				<div class="start">910285200</div>
+				<div class="end">936835200</div>
+				<div class="location">45.40.157.1</div>
+				<div class="title">Senior Junior Programmer</div>
+				<ul class="experience">
+					<li>Rewrote marmot food pricing function to handle increased popularity from movies</li>
+					<li>Sped up initial page load by 5 million nanoseconds</li>
+					<li>Inspired hugely successful mascot with in-office sock puppet antics</li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<h2>Education</h2>
+			<div class="job">
+				<div class="school">Trump University</div>
+				<div class="start">1116856800</div>
+				<div class="end">1243116000</div>
+				<div class="location">104.18.148.68</div>
+				<div class="degree">Master of Pseudoscience - Computers</div>
+				<div class="degree">Bachelor of Dealmaking - Technology Deals</div>
+			</div>
+		</section>
+		<section class="keywords">
+			<ul>
+				<li>.NET</li>
+				<li>Ada</li>
+				<li>API</li>
+				<li>AWS</li>
+				<li>Acrobat</li>
+				<li>Adaptive design</li>
+				<li>Adobe</li>
+				<li>Agile</li>
+				<li>Ajax</li>
+				<li>Algorithm</li>
+				<li>Android</li>
+				<li>Angular</li>
+				<li>Apple</li>
+				<li>Applications</li>
+				<li>Artificial Intelligence</li>
+				<li>Ask Jeeves</li>
+				<li>Ask Toolbar</li>
+				<li>Assembly</li>
+				<li>Asynchronous</li>
+				<li>Automation</li>
+				<li>Avengers</li>
+				<li>BASH</li>
+				<li>Baby Yoda</li>
+				<li>Backend</li>
+				<li>Baseball</li>
+				<li>Behavior Driven Development</li>
+				<li>Big data</li>
+				<li>Bill Gates</li>
+				<li>Binary</li>
+				<li>Bing</li>
+				<li>Blockchain</li>
+				<li>Books</li>
+				<li>Bootstrap</li>
+				<li>Brains</li>
+				<li>Browser</li>
+				<li>Bugs</li>
+				<li>Build</li>
+				<li>Business analyst</li>
+				<li>Buzzwords</li>
+				<li>C</li>
+				<li>C#</li>
+				<li>C++</li>
+				<li>CSS</li>
+				<li>Cache</li>
+				<li>Cache invalidation</li>
+				<li>Cats</li>
+				<li>Chatbot</li>
+				<li>Chemtrails</li>
+				<li>Chill</li>
+				<li>Chrome</li>
+				<li>Clojure</li>
+				<li>Code</li>
+				<li>Code review</li>
+				<li>Collaboration</li>
+				<li>Communication</li>
+				<li>Containers</li>
+				<li>Continuous deployment</li>
+				<li>Continuous integration</li>
+				<li>Counter-eco-terrorism</li>
+				<li>Creative</li>
+				<li>Crossword puzzles</li>
+				<li>Cryptocurrency</li>
+				<li>Cyberball</li>
+				<li>Cybercrime</li>
+				<li>Cybersecurity</li>
+				<li>Cyberspace</li>
+				<li>Customer focused</li>
+				<li>Dame Judi Dench</li>
+				<li>Data</li>
+				<li>Data Driven Development</li>
+				<li>Data mining</li>
+				<li>Data structures</li>
+				<li>Data warehouse</li>
+				<li>Data structures</li>
+				<li>Database</li>
+				<li>Debugging</li>
+				<li>Deep learning</li>
+				<li>Deployment</li>
+				<li>Design</li>
+				<li>Designer</li>
+				<li>Developer</li>
+				<li>Development</li>
+				<li>Disengagement</li>
+				<li>Disney Plus</li>
+				<li>Disruptive</li>
+				<li>Diverse</li>
+				<li>Documentation</li>
+				<li>Dogfooding</li>
+				<li>Domain name</li>
+				<li>E. Honda main</li>
+				<li>Elixir</li>
+				<li>Emacs</li>
+				<li>Email</li>
+				<li>Engagement</li>
+				<li>Engineering</li>
+				<li>Environment</li>
+				<li>Erlang</li>
+				<li>Excel</li>
+				<li>Experienced</li>
+				<li>Expert</li>
+				<li>Extreme programming</li>
+				<li>Exxxxxxxxxxxxxtreme programming</li>
+				<li>F#</li>
+				<li>Facebook</li>
+				<li>Fear Driven Development</li>
+				<li>Firefox</li>
+				<li>FizzBuzz</li>
+				<li>Flash</li>
+				<li>Flutter</li>
+				<li>Focused</li>
+				<li>Football</li>
+				<li>Frameworks</li>
+				<li>Fried chicken</li>
+				<li>Friends</li>
+				<li>Frontend</li>
+				<li>Full-stack</li>
+				<li>Functional</li>
+				<li>Game of Thrones</li>
+				<li>Gamification</li>
+				<li>Gay marriage</li>
+				<li>Geocities</li>
+				<li>Git</li>
+				<li>GitHub</li>
+				<li>Go</li>
+				<li>Google</li>
+				<li>Gramamas</li>
+				<li>Grams</li>
+				<li>Growth</li>
+				<li>Hexadecimal</li>
+				<li>HTML</li>
+				<li>HTTP</li>
+				<li>Hacker</li>
+				<li>Hacker news</li>
+				<li>Haskell</li>
+				<li>Hello world</li>
+				<li>IDE</li>
+				<li>Idris Elba</li>
+				<li>Importing/Exporting</li>
+				<li>Inclusive</li>
+				<li>Information Architecture</li>
+				<li>Internet Explorer</li>
+				<li>Internet of Things</li>
+				<li>Interviewing</li>
+				<li>James Corden</li>
+				<li>Jason Derulo</li>
+				<li>Java</li>
+				<li>JavaScript</li>
+				<li>Jeffrey Epstein didn't kill himself</li>
+				<li>Jennifer Hudson</li>
+				<li>K Pop</li>
+				<li>Kessel run</li>
+				<li>Knowledge</li>
+				<li>Kotlin</li>
+				<li>Languages</li>
+				<li>Leadership</li>
+				<li>Left Pad</li>
+				<li>Left click</li>
+				<li>Libraries</li>
+				<li>LinkedIn</li>
+				<li>Linux Torvalds</li>
+				<li>LiveJournal</li>
+				<li>Lotus Notes</li>
+				<li>MAGA</li>
+				<li>MS DOS</li>
+				<li>MVP</li>
+				<li>MacOS</li>
+				<li>Machine Learning</li>
+				<li>Mandalorian</li>
+				<li>Marine Biology</li>
+				<li>Math</li>
+				<li>Mechanical keyboards</li>
+				<li>Medicare for all</li>
+				<li>Medicare for none</li>
+				<li>Medicare for some miniature American flags for others</li>
+				<li>Medium-sized data</li>
+				<li>Memes</li>
+				<li>Mentorship</li>
+				<li>Microsoft Edge</li>
+				<li>Middle click</li>
+				<li>Millienials</li>
+				<li>Minification</li>
+				<li>Mobile</li>
+				<li>Moderation programming</li>
+				<li>Moms</li>
+				<li>Monster energy</li>
+				<li>Motivated</li>
+				<li>Mountain Dew</li>
+				<li>Multithreading</li>
+				<li>MySQL</li>
+				<li>MySpace</li>
+				<li>N-Tier Architecture</li>
+				<li>Naming things</li>
+				<li>Netflix</li>
+				<li>Netscape Navigator</li>
+				<li>Neural Network</li>
+				<li>Ninja</li>
+				<li>Non-technical writing</li>
+				<li>Norton Antivirus</li>
+				<li>No SQL</li>
+				<li>Numbers</li>
+				<li>OK Boomer</li>
+				<li>OS/2 Warp</li>
+				<li>Objective-C</li>
+				<li>Octal</li>
+				<li>Off by one errors</li>
+				<li>Office</li>
+				<li>Omniglot</li>
+				<li>Open office</li>
+				<li>Operating system</li>
+				<li>Oracle</li>
+				<li>PHP</li>
+				<li>Passionate</li>
+				<li>Pentium</li>
+				<li>Perl</li>
+				<li>Perserverance</li>
+				<li>Photoshop</li>
+				<li>Plugin</li>
+				<li>Podcast</li>
+				<li>Polyglot</li>
+				<li>PowerShell</li>
+				<li>Powerpoint</li>
+				<li>Predictive analytics</li>
+				<li>Pro-choice</li>
+				<li>Pro-life</li>
+				<li>Problem solving</li>
+				<li>Product</li>
+				<li>Programmer</li>
+				<li>Progressive Web Apps</li>
+				<li>Projects</li>
+				<li>Puns</li>
+				<li>Python</li>
+				<li>Quantified Self</li>
+				<li>Quid pro quo</li>
+				<li>R</li>
+				<li>Rails</li>
+				<li>Reddit</li>
+				<li>REST</li>
+				<li>React</li>
+				<li>React Native</li>
+				<li>Rebel Wilson</li>
+				<li>Recursion</li>
+				<li>Remote</li>
+				<li>Resolution</li>
+				<li>Responsive design</li>
+				<li>Résumé</li>
+				<li>Reversing a list</li>
+				<li>Right click</li>
+				<li>Rock star</li>
+				<li>Rubber Zucking</li>
+				<li>Ruby</li>
+				<li>Rust</li>
+				<li>SMS</li>
+				<li>SOAP</li>
+				<li>SQL</li>
+				<li>SSL</li>
+				<li>Safari</li>
+				<li>Scala</li>
+				<li>Scheme</li>
+				<li>Screenshots</li>
+				<li>Sitemap</li>
+				<li>Sir Ian McKellen</li>
+				<li>Skilled</li>
+				<li>Skype</li>
+				<li>Small data</li>
+				<li>Social Media</li>
+				<li>SoftRAM</li>
+				<li>Software</li>
+				<li>Solutions</li>
+				<li>Some SQL but not too much</li>
+				<li>Sorting Algorithms</li>
+				<li>Spaces</li>
+				<li>Specialize</li>
+				<li>Stack Overflow</li>
+				<li>Stack Overflow Driven Development</li>
+				<li>Star Wars</li>
+				<li>Startup</li>
+				<li>Statistics</li>
+				<li>Steve Jobs</li>
+				<li>Steve Wozbs</li>
+				<li>Stranger Things</li>
+				<li>Strategic</li>
+				<li>Stuff</li>
+				<li>Swift</li>
+				<li>Synchronous</li>
+				<li>Tabs</li>
+				<li>Taylor Swift</li>
+				<li>Team</li>
+				<li>Technical writing</li>
+				<li>Technologies</li>
+				<li>Test Driven Development</li>
+				<li>Testing</li>
+				<li>Text editor</li>
+				<li>The Cloud</li>
+				<li>The hacker known as 4chan</li>
+				<li>Netflix presents: Tiger King</li>
+				<li>Tools</li>
+				<li>Transformative</li>
+				<li>Twitter</li>
+				<li>TypeScript</li>
+				<li>UI Design</li>
+				<li>UNIX</li>
+				<li>UX Design</li>
+				<li>VBA</li>
+				<li>VIM</li>
+				<li>Version control</li>
+				<li>Visual Studio</li>
+				<li>Vue</li>
+				<li>Wearable</li>
+				<li>Web</li>
+				<li>Web scale</li>
+				<li>WebAssembly</li>
+				<li>Whiteboard</li>
+				<li>Windows</li>
+				<li>Windows Media Player</li>
+				<li>Windows command prompt</li>
+				<li>Wireframe</li>
+				<li>Witchhunt</li>
+				<li>Word</li>
+				<li>WordPerfect</li>
+				<li>Writing that's kind of technical but really is mostly nonsense</li>
+				<li>XML</li>
+				<li>Yahoo!</li>
+				<li>YouTube</li>
+				<li>iOS</li>
+				<li>iTunes</li>
+				<li>jQuery</li>
+			</ul>
+		</section>
+	</main>
+</body>
+
+</html>
